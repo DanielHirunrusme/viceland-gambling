@@ -1,0 +1,187 @@
+.studio-menu {
+	top:$g-v-padding;
+	
+	@include break('ipad') {
+		top:0;
+	}
+	
+	h3 {
+		@extend %globalText;
+		font-family:'n-bold', sans-serif;
+		margin-bottom:1em;
+		letter-spacing:.01em !important;
+	}
+	
+	li {
+		white-space:nowrap;
+		@include break('ipad') {
+			white-space:inherit;
+		}
+		p {
+			display:none;
+		}
+	}
+	
+	.site-footer, .site-description, .studio-site-footer {
+		display:none;
+	}
+	
+	.studio-site-description {
+		display:none;
+		p {
+			margin-bottom:1em;
+		}
+		
+		@include break('ipad') {
+			display:block;
+		}
+	}
+	
+	
+	@include break('ipad') {
+		margin-top:3vh;
+		padding-bottom:16vh;
+		overflow-x:hidden;
+		overflow-y:visible;
+		
+		.studio-site-footer {
+			display:block;
+			position:relative;
+		}
+		
+		@media only screen and (min-device-width: 300px)  and (max-device-width: 768px) and (orientation: landscape) {
+			 margin-bottom:15vh;
+		}
+		
+		.site-footer, .site-description {
+			display:block;
+			position:relative;
+			top:0;
+			margin-bottom:3vh;
+			span {
+				position:relative;
+			}
+		}
+		
+		nav, div {
+			margin:0 10vw 0 $g-h-padding;
+		}
+		
+		a.active {
+			
+			i {
+				width:10px;
+				height:10px;
+				display:block;
+				float:left;
+				margin-right:5px;
+				position:relative;
+				margin-top:2px;
+			}
+			
+			
+			i.open:before {
+			  position: absolute;
+			  left: 0px;
+			  content: ' ';
+			  height: 1px;
+			  width: 10px;
+			  top:5px;
+			  background-color: #000;
+			}
+		}
+		
+		li  {
+			
+			div {
+			    margin: 1em 0 2em 15px;
+				
+			}
+			
+			p {
+				display:block;
+			}
+			
+			
+			
+			
+			p a, span {
+				@extend %h1;
+			}
+		}
+
+	}
+	
+	.block {
+		margin-bottom:4em;
+		p {
+			margin-bottom:1em;
+		}
+	}
+	
+	.selected-press {
+		
+		ul {
+			display:inline-block;
+			
+			a {
+				@include opacity(1);
+			}
+			
+			a:hover, a.active {
+				@include opacity(1);
+			}
+		}
+		
+		
+		
+		ul:hover, ul.active {
+			
+			a {
+				@include opacity(.4);
+			}
+			
+			a:hover, a.active {
+				@include opacity(1);
+			}
+			
+		}
+		
+		div.open {
+			a {
+				@include opacity(1);
+			}
+		}
+		
+		a:hover, a.active {
+			@include opacity(1);
+		}
+	}
+	
+}
+
+
+.post {
+	.studio-menu {
+		.selected-press {
+			ul {
+				display:inline-block;
+			
+				a {
+					@include opacity(.4);
+				}
+			
+				a:hover, a.active {
+					@include opacity(1);
+				}
+				
+				div.open {
+					a {
+						@include opacity(1);
+					}
+				}
+			}
+		
+		}
+	}
+}

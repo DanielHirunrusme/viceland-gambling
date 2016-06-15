@@ -1,0 +1,49 @@
+.button--primary {
+	border:1px solid $c-black;
+	color:$c-black;
+	background:$c-white;
+	text-transform:uppercase;
+	
+	&:hover {
+		color:$c-black;
+		background:$c-white;
+	}
+	/*
+	&:hover, &.disabled, &.active {
+		color:$c-white;
+		background:$c-black;
+		
+		@include break('phone') {
+			color:$c-black;
+			background:$c-white;
+		}
+	}
+	
+	&:focus {
+		@include break('phone') {
+			color:$c-white;
+			background:$c-black;
+		}
+	}
+	*/
+	
+	&.clicked {
+		color:$c-white;
+		background:$c-black;
+	}
+	
+}
+
+button {
+	font-weight:bold !important;
+	text-transform:uppercase;
+	
+	@include break(phone) {
+		//letter-spacing:.02em;
+	}
+}
+
+button:hover {
+	background:$c-black;
+	color:$c-white;
+}

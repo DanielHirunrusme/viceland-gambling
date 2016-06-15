@@ -1,0 +1,43 @@
+.loader {
+	height:3rem;
+	background:$c-white;
+	border:1px solid $c-black;
+	padding-top:.8rem;
+	padding-bottom:.8rem;
+	width:100%;
+	margin-top:2em;
+	line-height:3rem;
+	position:relative;
+	
+	
+	.loader-bar {
+		background:$c-black;
+		position:absolute;
+		left:0;
+		top:0;
+		height:100%;
+		z-index:2;
+		width:0;
+	}
+	
+	span {
+		@extend h1;
+		position:absolute;
+		width:100%;
+		line-height:3;
+		top:0;
+		left:0;
+		height:100%;
+		text-align:center;
+	}
+	
+	.top-loading {
+		color:$c-white;
+		z-index:3;
+	}
+	
+	.btm-loading {
+		color:$c-black;
+		z-index:1;
+	}
+}

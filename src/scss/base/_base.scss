@@ -1,0 +1,64 @@
+body, html {
+	height:100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+
+	@include transition(background-color .8s)
+	background-color:$c-background;
+	overflow:hidden;
+}
+
+.scrollHack {
+	display:none;
+	
+	@include break('ipad') {
+		
+		//background:red;
+		//z-index:999999;
+		display: block;
+		height: 100vh;
+		padding-top: 100vh; width:100%;
+		float: left;position:absolute; left:0;
+		top:0;
+	}
+} 
+
+#landscape {
+	display:none;
+	background:#000;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:9;
+	
+	article {
+		@include justify-content(center);
+		color:#fff;
+		width:100%;
+		
+		h1 {
+			margin:0 60px;
+			text-align:center;
+			color:$c-white;
+		}
+	}
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-device-width: 667px) and (orientation: landscape) { 
+	#landscape {
+		@include flexbox;
+	}
+}
+
+
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

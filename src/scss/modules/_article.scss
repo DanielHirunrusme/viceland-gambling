@@ -1,0 +1,61 @@
+.content-wrapper {
+	@include flexbox;
+	@include justify-content(center);
+	@include flex-direction(column);
+	@include align-items(center);
+	
+	.content {
+		@include flexbox;
+		@include justify-content(center);
+		@include flex-direction(column);
+		@include align-items(center);
+		@include flex(0 1 460px);
+		margin:0 auto;
+		width:460px;
+		padding:0;
+		max-width:460px;
+		
+		@include break('ipad') {
+			width:auto;
+			padding:0 25px;
+		}
+		
+		h2 {
+			@extend .caps;
+			margin-bottom:1em;
+			text-align:center;
+		}
+		
+		p + h2 {
+			margin-top:3em;
+		}
+		
+		p {
+			text-align:justify;
+		}
+		
+		.grouped-items {
+			text-align:center;
+			width:100%;
+			display:block;
+			
+			* {
+				text-align:center;
+				display:inline;
+				margin:0 5px;
+			}
+		}
+	}
+}
+
+article {
+	@include flexbox;
+	@include justify-content(center);
+	@include flex-direction(column);
+	@include align-items(center);
+	padding:6.75rem 60px 3.75rem 60px;
+	
+	@include break('phone') {
+		padding:2.5rem .625rem;
+	}
+}

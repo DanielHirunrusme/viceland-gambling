@@ -1,0 +1,141 @@
+#cashout, #borrow {
+	top:0;
+	position:absolute;
+	left:0;
+	height:100%;
+	background:$c-black;
+	z-index:99;
+	display:none;
+	
+	a {
+		text-decoration:underline;
+	}
+	
+	article {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		background:$c-black;
+		
+		height:calc(100% - 3.75rem);
+		@include justify-content(space-between);
+		padding-right:0;
+		padding-top:3.75rem;
+		padding-left:0;
+		@include break(phone) {
+			height:calc(100% - 60px);
+			padding-bottom:0;
+		}
+	}
+	
+	
+	.end-screen-one {
+		z-index:1;
+		
+	}
+	.end-screen-two {
+		top:100%;
+		text-align:center;
+		
+		.end-matter {
+			margin-bottom:1rem;
+			
+			.copyright {
+				margin-top:1rem;
+			}
+		}
+	}
+	
+	*, h1 { 
+		color:$c-white;
+	}
+	
+	h1.cashout-message {
+	    font-size: 3rem;
+	    margin: 0 60px;
+	    line-height: 1.2;
+		text-align:center;
+		
+		@include break(phone) {
+			font-size:2rem;
+			margin:0 .625rem;
+		}
+	}
+	
+	a {
+		color:$c-white;
+		background:none;
+	}
+	
+	.share-module {
+		text-align:center;
+		margin:1rem 0;
+		
+		h1 {
+			margin-bottom:.5rem;
+		}
+		
+		a {
+			border:1px solid $c-black;
+			background:$c-white;
+			color:$c-black;
+			text-decoration:none;
+			    padding: 1.5rem 3rem;
+			//margin:0 .1rem;
+		    //margin: 0 1px;
+		    float: left;
+			
+			@include break(phone) {
+			  
+			    background: #fff;
+			    color: #000;
+			    padding: 1rem 1rem;
+			    display: inline-block;
+			    margin: 2px auto;
+			    //width: 100%;
+				
+			}
+			
+			&:hover {
+				background:$c-black;
+				border:1px solid $c-white;
+				color:$c-white;
+			}
+		}
+		
+	}
+	
+	.cashout-module {
+		border-top:1px solid $c-white;
+		
+		button {
+			color:$c-black;
+			border:none;
+			
+			&.clicked {
+				background:$c-black;
+				color:$c-white;
+			}
+		}
+		
+	}
+	
+	#cashout-yes, #cashout-no {
+		color:$c-black;
+		border:none;
+	}
+	
+	#cashout-yes.clicked, #cashout-no.clicked {
+		background:$c-black;
+		color:$c-white;
+	}
+	
+	.cashout-module {
+		@include break(phone) {
+			button {
+				height:4rem;
+			}
+		}
+	}
+}

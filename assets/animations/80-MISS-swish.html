@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>50-MISS-miss</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
+<script src="80-MISS-swish.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+(function($){
+  $(window).resize(function(){
+     windowResize();                      
+  });       
+  
+ 
+    
+})(jQuery);
+
+function windowResize(){
+   stage.canvas.width = window.innerWidth;
+   stage.canvas.height = window.innerHeight;    
+   var test = (window.innerHeight/600)*1;
+   exportRoot.scaleX = exportRoot.scaleY = test;
+   exportRoot.x = window.innerWidth/2 - (900 * exportRoot.scaleX)/2;
+   
+}
+
+function init() {
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib.FTidle();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+	
+	 windowResize();
+	  stopAnimation();
+}
+
+function stopAnimation(){
+	exportRoot.gotoAndStop(1);
+}
+
+function playAnimation(){
+	exportRoot.play();
+}
+
+</script>
+</head>
+
+<body onload="init();" style="margin:0; padding:0; background-color:#fff">
+	<canvas id="canvas" width="900" height="500" style="background-color:#FFFFFF"></canvas>
+</body>
+</html>

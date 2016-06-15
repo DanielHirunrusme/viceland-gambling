@@ -1,0 +1,28 @@
+.animation-iframe {
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+	border:none;
+	overflow:hidden;
+	
+	canvas {
+		border:none;
+	}
+	
+	body {
+		overflow:hidden;
+	}
+}
+
+
+#idle-animation {
+	display:block;
+}
+
+
+.animation-canvas {
+	margin:0 auto;
+}

@@ -1,0 +1,97 @@
+header {
+	background:$c-black;
+	height:3.75rem;
+	position:absolute;
+	z-index:9999;
+	width:100%;
+	
+	@include break(phone) {
+		height:2.5rem;
+	}
+	
+	h1 {
+		@include flexbox;
+		@include flex-direction(column);
+		@include justify-content(center);
+		width:10rem;
+		color:$c-white;
+		text-transform:uppercase;
+		line-height:3.75rem;
+		height:3.75rem;
+		padding:0 .75rem;
+		font-size:20px;
+		
+		@include break(phone) {
+			padding:0;
+			margin:0 auto;
+			height:2.5rem;
+			line-height:2.5rem;
+			width:7rem;
+		}
+	}
+}
+
+
+.main-header {
+	/*@include transition(.3s all);*/
+	position:fixed;
+	width:100%;
+	top:0px;
+	z-index:9999;
+	background:transparent;
+	padding:25px 0;
+	overflow:hidden;
+	
+	@include flexbox;
+	@include flex-direction(column);
+	
+	@include break(ipad) { 
+		position:fixed;
+		width:100%;
+		top:0;
+		z-index:9999;
+		padding:25px 0;
+		
+	} 
+	
+	@include break(laptop) { 
+		position:fixed;
+		width:100%;
+		top:0;
+		z-index:9999;
+		padding:25px 0;
+	} 
+
+	@include break(desktop) { 
+		position:fixed;
+		width:100%;
+		top:0;
+		z-index:9999;
+		padding:25px 0;
+	} 
+}
+
+.main-header:hover, .main-header.over, body.mobile .main-header {
+	background:#fff;
+}
+
+body.mobile .main-header {
+ height:50% !important;
+ min-height:400px;
+}
+
+.main-header.header-subsubmenu {
+	border-bottom:1px solid $c-orange;
+}
+
+.mobile .main-header {
+	display:none;
+}
+
+
+.logo {
+	span {
+		@include transition(0s color)
+	}
+}
+

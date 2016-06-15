@@ -1,0 +1,235 @@
+.logo {
+	//position:absolute;
+	//top:50%;
+	//margin-top:-.6em;
+	font-family:'n-bold';
+	
+	a {
+		//@extend .notransition;
+		
+	}
+	
+	span {
+	    letter-spacing: -.1em !important;
+	    margin-right: .2em;
+	}
+}
+
+.brand-menu {
+	@extend .span_3; 
+	position:fixed;
+	left:0;
+	top:0;
+	height:100px;
+	top:50vh;
+	margin-top:-50px; 
+	z-index:9999;
+	
+	@include break('ipad') {
+		@include flexbox;
+		top:50%;
+		@include flex-direction(column);
+		@include justify-content(center);
+	}
+	
+	@media only screen and (min-device-width: 300px)  and (max-device-width: 768px) and (orientation: landscape) {
+		  height:80vh;
+	}
+	
+	.brand-menu-holder {
+		@include flexbox;
+		@include flex-direction(column);
+		@include justify-content(center);
+		height:100%;
+		padding-left:$g-h-padding;
+		
+		@include break('ipad') {
+			width:100vw;
+		}
+	}
+	
+	
+	
+	.site-description {
+		margin-top:-.1em;
+		
+		p {
+			@extend h1;
+			margin-bottom:1em;
+		}
+	}
+	
+	
+	
+}
+
+.site-footer, .studio-site-footer {
+	position:absolute;
+	bottom:4vh;
+	left:5vw;
+	color:#000;
+	@include break('ipad'){
+		margin-bottom:6vh;
+	}
+	
+	@media only screen and (min-device-width: 300px)  and (max-device-width: 768px) and (orientation: landscape) {
+		  margin-bottom:2vh;
+	}
+	
+	
+	p {
+		float:left;
+		color:#000;
+	}
+	
+	a {
+		@include opacity(1);
+	}
+}
+
+.studio-site-footer  {
+	left:0;
+}
+
+.site-footer p:hover {
+	a {
+		@include opacity(.4);
+	}
+	
+	a:hover {
+		@include opacity(1);
+	}
+}
+
+.animating {
+	
+	
+	
+	.site-footer {
+		
+		a {
+			@extend .notrans;
+		}
+	}
+}
+
+.site-description {
+	@extend %h1;
+	@extend .span_4; 
+	z-index:99999;
+	position:fixed;
+	padding-right:$g-h-padding;
+	left:$g-h-padding;
+	top:$g-v-padding;
+	float:left;
+	
+	p {
+		padding-bottom:1em;
+	}
+	
+	@include break('ipad') {
+		width:90vw;
+		position:fixed;
+		top:3vh;
+		padding-right:0;
+		left:0;
+		display:none;
+	}
+	
+	span {
+		@extend h1;
+		@include font-size($h1-sizes);
+		width:auto;
+		float:left;
+		top:0;
+		margin:0;
+		position:absolute;
+		width:100%;
+		
+		@include break('ipad') {
+			margin:0 $g-h-padding;
+			width:calc(100% - ($g-h-padding * 2));
+		}
+	}
+	
+	span.added-article {
+		left:100vw;
+	}
+	
+	p {
+		@extend h1;
+	}
+
+}
+
+
+.btm-site-footer {
+	position:absolute;
+	bottom:4vh;
+	left:5vw;
+	color:#000;
+	z-index:9999;
+	@include transition(opacity $animation-speed);
+	@include opacity(1);
+	pointer-events:auto;
+	
+	@include break('ipad'){
+		margin-bottom:6vh;
+	}
+	
+	@media only screen and (min-device-width: 300px)  and (max-device-width: 768px) and (orientation: landscape) {
+		  margin-bottom:2vh;
+	}
+	
+	
+	p {
+		float:left;
+		color:#000;
+	}
+	
+	a {
+		@include opacity(1);
+		color:#000;
+	}
+	
+	&:hover {
+		a {
+			@include opacity(.4);
+		}
+		
+		a:hover {
+			@include opacity(1);
+		}
+	}
+	
+}
+
+.projects, .project {
+	.btm-site-footer {
+		@include opacity(0);
+		pointer-events:none;
+	}
+}
+
+.studio, .post {
+	.btm-site-footer {
+		@include break('ipad') {
+			@include opacity(0);
+		}
+	}
+}
+
+
+.home {
+
+	.site-description {
+		@include break('ipad') {
+			display:block;
+		}
+	}
+	
+	 
+	.brand-menu  {
+		@extend .span_4; 
+	}
+}

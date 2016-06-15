@@ -1,0 +1,50 @@
+.main-menu {
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:9999;
+	
+	.logo-link {
+		@extend .caps;
+		float:left;
+		padding:20px;
+		color:$c-global;
+		
+		@include break('ipad') {
+			padding:20px 25px;
+		}
+	}
+	
+	nav {
+		float:right;
+		
+		li {
+			float:left;
+			
+			a, button {
+				@extend .caps;
+				padding:20px 12px 20px 12px;
+				display:block;
+				float:left;
+				color:$c-global;
+				border:none;
+				background:none;
+			}
+			
+			&:last-child {
+				a {
+					padding-right:20px;
+				}
+			}
+			
+		}
+		
+		
+	}
+	
+}
+
+a:focus, a:active, button:focus, button:active {
+	outline:none;
+}

@@ -1,0 +1,82 @@
+.wager-module {
+	@include flexbox;
+	@include justify-content(space-between);
+	@include flex-direction(row);
+	@include align-items(center);
+	@include flex(1);
+	height:8vw;
+	width:calc(100% - 2vw);
+	padding:0 1vw;
+	border-top:1px solid $c-black; 
+	max-height:$max-height-box;
+	
+	@include break(phone) {
+		max-height::$max-height-box/2;
+	}
+	
+	button {
+		//height:3rem;
+		//width:3rem;
+		line-height:0rem;
+		border:1px solid $c-black;
+		font-size:3rem;
+		    padding: 2.5rem 2rem;
+			
+			@include break(phone) {
+				    padding: 2rem 1.5rem;
+					margin:0 2vw;
+			}
+	}
+	
+	.add-wage {
+		@include break(phone) {
+			padding:1.8rem 1.5rem 2.2rem 1.5rem;
+		}
+	}
+	
+	.wage-amount {
+		font-size:3rem;
+		font-weight:bold;
+	}
+	
+	.wager-unit {
+		@include flexbox;
+		@include justify-content(center);
+		@include flex-direction(column);
+		@include align-items(center);
+		@include flex(0 1 10vw);
+		min-width:100px;
+		max-width:150px;
+		margin-right:10px;
+		
+		&:last-child {
+			margin-right:0;
+		}
+		
+		&>* {
+			@include flex(1);
+			width:100%;
+		}
+		
+		button, input {
+			width:100%;
+			padding:1em;
+			height:$max-height-box/2;
+			
+			@include break(phone) {
+				height:60px;
+				padding:0;
+			}
+		}
+		
+		input {
+			text-align:center;
+		}
+		
+		button {
+			line-height:0;
+		}
+	}
+}
+
+
